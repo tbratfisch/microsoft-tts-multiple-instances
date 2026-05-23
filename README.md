@@ -116,7 +116,6 @@ python get_microsoft_tts_voices.py \
 | `--language` | *(required)* | One or more language codes, e.g. `de` `de-DE` `en-US` |
 | `--region` | `westeurope` | Azure region of your Speech resource |
 | `--neural-only` | off | Only include Neural voices |
-| `--secret` | `azure_api_key` | Name of the HA secret holding the API key |
 | `--volume` | *(omitted)* | Volume offset (-100 to 100); line omitted from output if not specified |
 | `--list` | off | Print available voices to stderr, no YAML output |
 
@@ -136,7 +135,6 @@ The generated file contains one entry per voice and is designed for direct inclu
   type: KatjaNeural
   gender: Female
   region: westeurope
-  volume: 50
 
 - api_key: !secret azure_api_key
   service_name: microsoft_de_de_conrad
