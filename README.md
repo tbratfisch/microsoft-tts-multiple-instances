@@ -29,7 +29,6 @@ custom_components/
     └── tts.py               # not needed, can be omitted
 
 get_microsoft_tts_voices.py  # helper script to generate voice config
-microsoft-tts-voices.yaml    # generated voice list (included by configuration.yaml)
 ```
 
 ---
@@ -38,10 +37,10 @@ microsoft-tts-voices.yaml    # generated voice list (included by configuration.y
 
 1. Copy `custom_components/microsoft/` into your HA config directory.
 2. Generate your voice list (see below).
-3. Add the following to `configuration.yaml`:
+3. Add the following to `configuration.yaml`, pointing to your generated voice file:
 
 ```yaml
-microsoft: !include microsoft-tts-voices.yaml
+microsoft: !include voices.yaml
 ```
 
 4. Restart Home Assistant.
@@ -65,14 +64,14 @@ python get_microsoft_tts_voices.py \
     --key YOUR_AZURE_API_KEY \
     --language de-DE \
     --region westeurope \
-    > microsoft-tts-voices.yaml
+    > voices.yaml
 
 # Multiple languages
 python get_microsoft_tts_voices.py \
     --key YOUR_AZURE_API_KEY \
     --language de en-US fr \
     --region westeurope \
-    > microsoft-tts-voices.yaml
+    > voices.yaml
 
 # Neural voices only
 python get_microsoft_tts_voices.py \
@@ -80,7 +79,7 @@ python get_microsoft_tts_voices.py \
     --language de en \
     --region westeurope \
     --neural-only \
-    > microsoft-tts-voices.yaml
+    > voices.yaml
 
 # Just list available voices without generating YAML
 python get_microsoft_tts_voices.py \
