@@ -26,7 +26,6 @@ custom_components/
 └── microsoft/
     ├── manifest.json
     ├── __init__.py          # replaces the built-in component
-    └── tts.py               # not needed, can be omitted
 
 get_microsoft_tts_voices.py  # helper script to generate voice config
 ```
