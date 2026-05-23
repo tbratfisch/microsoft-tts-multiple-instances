@@ -34,15 +34,36 @@ get_microsoft_tts_voices.py  # helper script to generate voice config
 
 ## Installation
 
-1. Copy `custom_components/microsoft/` into your HA config directory.
-2. Generate your voice list (see below).
-3. Add the following to `configuration.yaml`, pointing to your generated voice file:
+### Option A — Clone from GitHub (recommended)
+
+This keeps the component up to date with a simple `git pull`.
+
+```bash
+cd /config/custom_components
+git clone https://github.com/tbratfisch/microsoft-tts-multiple-instances.git microsoft
+```
+
+To update later:
+
+```bash
+cd /config/custom_components/microsoft
+git pull
+```
+
+### Option B — Manual
+
+Download or copy `custom_components/microsoft/` into your HA config directory.
+
+### Both options
+
+1. Generate your voice list (see below).
+2. Add the following to `configuration.yaml`, pointing to your generated voice file:
 
 ```yaml
 microsoft: !include voices.yaml
 ```
 
-4. Restart Home Assistant.
+3. Restart Home Assistant.
 
 ---
 
