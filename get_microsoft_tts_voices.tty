@@ -83,7 +83,8 @@ def generate_yaml(voices: list[dict], api_key_secret: str, region: str, volume: 
         lines.append(f"  type: {voice_type}")
         lines.append(f"  gender: {gender}")
         lines.append(f"  region: {region}")
-        lines.append(f"  volume: {volume}")
+        if volume is not None:
+            lines.append(f"  volume: {volume}")
         lines.append("")
 
     if skipped:
@@ -101,7 +102,7 @@ def main():
     parser.add_argument("--region",      default="westeurope", help="Azure region (default: westeurope)")
     parser.add_argument("--neural-only", action="store_true",  help="Only include Neural voices")
     parser.add_argument("--secret",      default="azure_api_key", help="HA secret name for the API key")
-    parser.add_argument("--volume",      type=int, default=50, help="Volume offset (default: 50)")
+    parser.add_argument("--volume",      type=int, default=None, help="Volume offset (-100 to 100); omitted from output if not specified")
     parser.add_argument("--list",        action="store_true", help="Just list voice names, no YAML")
     args = parser.parse_args()
 

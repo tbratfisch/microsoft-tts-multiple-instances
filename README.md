@@ -97,7 +97,7 @@ python get_microsoft_tts_voices.py \
 | `--region` | `westeurope` | Azure region of your Speech resource |
 | `--neural-only` | off | Only include Neural voices |
 | `--secret` | `azure_api_key` | Name of the HA secret holding the API key |
-| `--volume` | `50` | Volume offset applied to all voices (-100 to 100) |
+| `--volume` | *(omitted)* | Volume offset (-100 to 100); line omitted from output if not specified |
 | `--list` | off | Print available voices to stderr, no YAML output |
 
 ### Language Filtering
